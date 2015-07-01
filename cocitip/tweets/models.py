@@ -1,3 +1,21 @@
 from django.db import models
 
-# Create your models here.
+
+class CreatedUpdatedAtAbstractModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True
+
+
+class Tweet(CreatedUpdatedAtAbstractModel):
+    """docstring for Tweet"""
+    account = models.CharField(max_length=36)
+    twitter_id = models.PositiveIntegerField()
+    posted_on = models.DateTimeField()
+    text = models.CharField(max_length=500)
+
+    def __unicode__(self):
+        return '{0}-{1}'.format(self.account, self.twitter_id)
+
