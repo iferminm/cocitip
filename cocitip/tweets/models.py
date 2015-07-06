@@ -12,7 +12,7 @@ class CreatedUpdatedAtAbstractModel(models.Model):
 class Tweet(CreatedUpdatedAtAbstractModel):
     """docstring for Tweet"""
     account = models.CharField(max_length=36)
-    twitter_id = models.PositiveIntegerField(unique=True)
+    twitter_id = models.BigIntegerField(unique=True)
     posted_on = models.DateTimeField()
     text = models.CharField(max_length=500)
 
