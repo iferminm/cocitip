@@ -19,3 +19,5 @@ class Tweet(CreatedUpdatedAtAbstractModel):
     def __unicode__(self):
         return '{0}-{1}'.format(self.account, self.twitter_id)
 
+    def __str__(self):
+        return str(self.__unicode__())
