@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'haystack',
     'tweets',
+    'search',
 )
 
 MIDDLEWARE_CLASSES = (
