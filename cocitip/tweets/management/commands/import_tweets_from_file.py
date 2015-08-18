@@ -46,7 +46,7 @@ class Command(BaseCommand):
                     text=text
                 )
                 tweet.save()
-                
+
                 message = 'Saved tweet {0} from account {1}'.format(tw_id, account)
                 print(message)
 

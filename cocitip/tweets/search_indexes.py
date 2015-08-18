@@ -7,6 +7,7 @@ from tweets.models import Tweet
 
 class TweetIndex(indexes.SearchIndex, indexes.Indexable):
     """docstring for TweetIndex"""
+    id = indexes.IntegerField(model_attr='id')
     account = indexes.CharField(model_attr='account')
     posted_on = indexes.DateTimeField(model_attr='posted_on')
     text = indexes.CharField(document=True, model_attr='text')
